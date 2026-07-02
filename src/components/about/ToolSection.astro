@@ -22,6 +22,22 @@ const { class: className, title, tools, ...props } = Astro.props
 function isImageMetadata(obj: unknown): obj is ImageMetadata {
   return typeof obj === 'object' && obj !== null && 'src' in obj
 }
+
+async function resolveIcon(icon: Promise<any> | ImageMetadata): Promise<ImageMetadata | string> {
+  if (isImageMetadata(icon)) {
+    return icon
+  }
+
+  const resolved = await icon
+
+  // Handle module imports (e.g., import('*.png'))
+  if (resolved && typeof resolved === 'object' && 'default' in resolved) {
+    return resolved.default
+  }
+
+  // Handle raw SVG imports
+  return resolved
+}
 ---
 
 <div
@@ -31,60 +47,65 @@ function isImageMetadata(obj: unknown): obj is ImageMetadata {
   <div class='m-0 px-2 text-lg font-medium'>{title}</div>
   <div class='grid grid-cols-1 gap-x-2 gap-y-2 sm:grid-cols-2'>
     {
-      tools.map((tool) => (
-        <a
-          class='group relative text-sm leading-normal no-underline'
-          href={tool.href}
-          id={tool.name}
-          target='_blank'
-        >
-          <div class='flex items-center gap-x-3 rounded-lg border border-transparent px-1.5 py-1 transition-colors hover:border-border hover:bg-muted'>
-            {tool.darkIcon ? (
-              <>
-                {isImageMetadata(tool.icon) ? (
-                  <div class='size-10 rounded-lg bg-card p-2 dark:hidden'>
-                    <Image src={tool.icon} alt={tool.name} class='h-full w-full object-contain' />
-                  </div>
-                ) : (
-                  <Svg
-                    src={tool.icon}
-                    class='size-10 rounded-lg bg-card fill-foreground p-2 dark:hidden'
-                  />
-                )}
+      tools.map(async (tool) => {
+        const resolvedIcon = await resolveIcon(tool.icon)
+        const resolvedDarkIcon = tool.darkIcon ? await resolveIcon(tool.darkIcon) : null
 
-                {isImageMetadata(tool.darkIcon) ? (
-                  <div class='size-10 rounded-lg bg-card p-2 hidden dark:block'>
-                    <Image
-                      src={tool.darkIcon}
-                      alt={tool.name}
-                      class='h-full w-full object-contain'
-                    />
-                  </div>
-                ) : (
-                  <Svg
-                    src={tool.darkIcon}
-                    class='size-10 rounded-lg bg-card fill-foreground p-2 hidden dark:block'
-                  />
-                )}
-              </>
-            ) : (
-              <>
-                {isImageMetadata(tool.icon) ? (
-                  <div class='size-10 rounded-lg bg-card p-2'>
-                    <Image src={tool.icon} alt={tool.name} class='h-full w-full object-contain' />
-                  </div>
-                ) : (
-                  <Svg src={tool.icon} class='size-10 rounded-lg bg-card fill-foreground p-2' />
-                )}
-              </>
-            )}
-            <div class='z-20 flex flex-col'>
-              <div class='font-medium text-foreground'>{tool.name}</div>
-              <div class='font-normal'>{tool.description}</div>
+        return (
+          <a
+            class='group relative text-sm leading-normal no-underline'
+            href={tool.href}
+            id={tool.name}
+            target='_blank'
+          >
+            <div class='flex items-center gap-x-3 rounded-lg border border-transparent px-1.5 py-1 transition-colors hover:border-border hover:bg-muted'>
+              {resolvedDarkIcon ? (
+                <>
+                  {isImageMetadata(resolvedIcon) ? (
+                    <div class='size-10 rounded-lg bg-card p-2 dark:hidden'>
+                      <Image src={resolvedIcon} alt={tool.name} class='h-full w-full object-contain' />
+                    </div>
+                  ) : (
+                    <div class='size-10 rounded-lg bg-card p-2 dark:hidden'>
+                      <img src={`data:image/svg+xml,${encodeURIComponent(resolvedIcon)}`} alt={tool.name} class='h-full w-full object-contain' />
+                    </div>
+                  )}
+
+                  {isImageMetadata(resolvedDarkIcon) ? (
+                    <div class='size-10 rounded-lg bg-card p-2 hidden dark:block'>
+                      <Image
+                        src={resolvedDarkIcon}
+                        alt={tool.name}
+                        class='h-full w-full object-contain'
+                      />
+                    </div>
+                  ) : (
+                    <div class='size-10 rounded-lg bg-card p-2 hidden dark:block'>
+                      <img src={`data:image/svg+xml,${encodeURIComponent(resolvedDarkIcon)}`} alt={tool.name} class='h-full w-full object-contain' />
+                    </div>
+                  )}
+                </>
+              ) : (
+                <>
+                  {isImageMetadata(resolvedIcon) ? (
+                    <div class='size-10 rounded-lg bg-card p-2'>
+                      <Image src={resolvedIcon} alt={tool.name} class='h-full w-full object-contain' />
+                    </div>
+                  ) : (
+                    <div class='size-10 rounded-lg bg-card p-2'>
+                      <img src={`data:image/svg+xml,${encodeURIComponent(resolvedIcon)}`} alt={tool.name} class='h-full w-full object-contain' />
+                    </div>
+                  )}
+                </>
+              )}
+              <div class='z-20 flex flex-col'>
+                <div class='font-medium text-foreground'>{tool.name}</div>
+                <div class='font-normal'>{tool.description}</div>
+              </div>
             </div>
-          </div>
-        </a>
-      ))
+          </a>
+        )
+      })
     }
   </div>
 </div>

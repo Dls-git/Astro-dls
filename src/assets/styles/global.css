@@ -267,6 +267,11 @@ span.katex-display {
   }
 }
 
+/* Hide footer */
+footer {
+  display: none;
+}
+
 /* Scroll bar */
 :root {
   --scrollbar-thumb: hsl(var(--muted-foreground) / var(--un-bg-opacity, 0.3));

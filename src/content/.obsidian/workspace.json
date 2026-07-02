@@ -1,0 +1,200 @@
+{
+  "main": {
+    "id": "f330a8e7bbeddfaa",
+    "type": "split",
+    "children": [
+      {
+        "id": "7c34d5475ceea9e9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f1fe25b6d1ee0e10",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "docs/setup/configuration.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "configuration"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "164e0cf13ab6d285",
+    "type": "split",
+    "children": [
+      {
+        "id": "3b6cc19c9b6a52a0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a15658cf1195644f",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "f4977dc8aab32808",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "fb86939b9c49aeae",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7a78d2c28e1d67b9",
+    "type": "split",
+    "children": [
+      {
+        "id": "655da9ecdf446d70",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "5f4b8641dfb13870",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "docs/setup/configuration.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "configuration 的反向链接列表"
+            }
+          },
+          {
+            "id": "42623d422cfef1f2",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "docs/setup/configuration.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "configuration 的出链列表"
+            }
+          },
+          {
+            "id": "c488e26f5713cdcf",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "3ed6bf5485dbd885",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "d09735f09c16bac2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "docs/setup/configuration.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "configuration 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false
+    }
+  },
+  "active": "f1fe25b6d1ee0e10",
+  "lastOpenFiles": [
+    "docs/integrations/unocss.md",
+    "docs/advanced/faq.md",
+    "blog/music-journey/index.md",
+    "blog/markdown-zh/thumbnail.jpg",
+    "blog/markdown-zh/index.md",
+    "blog/markdown/index.md",
+    "blog/improve-concentration/thumbnail.jpg",
+    "blog/3d-rendering/index.md",
+    "blog/3d-rendering/thumbnail.jpg",
+    "blog/3d-rendering/thanos-dd-single-image-004a.jpg",
+    "blog/3d-rendering/nikola-arsov-still-life-interior-design-vray-3ds-max-05-930px.jpg"
+  ]
+}

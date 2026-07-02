@@ -11,6 +11,17 @@ const {
 } = Astro.props
 // TODO: Temporary fix for the issue with the headings that end with link reference text
 const text = rawText.endsWith('#') ? rawText.slice(0, -1) : rawText
+
+// Calculate indentation based on depth
+const getIndentClass = (depth: number) => {
+  switch (depth) {
+    case 2: return 'ps-2'
+    case 3: return 'ps-5'
+    case 4: return 'ps-8'
+    case 5: return 'ps-11'
+    default: return 'ps-2'
+  }
+}
 ---
 
 <li>
@@ -22,7 +33,7 @@ const text = rawText.endsWith('#') ? rawText.slice(0, -1) : rawText
       aria-label={`Scroll to section: ${text}`}
       class={cn(
         'toc-item line-clamp-2 px-3 py-1 ms-2 text-foreground/75 transition-all hover:text-foreground [&.highlight]:font-medium [&.highlight]:text-primary [&.highlight-bg-translucent]:bg-muted',
-        depth > 2 && 'ps-7'
+        getIndentClass(depth)
       )}
       href={`#${slug}`}>{text}</a
     >
