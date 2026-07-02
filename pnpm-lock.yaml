@@ -72,6 +72,9 @@ importers:
       '@unocss/preset-typography':
         specifier: ^66.7.4
         version: 66.7.4
+      '@unocss/reset':
+        specifier: ^66.7.4
+        version: 66.7.4
       eslint:
         specifier: ^10.5.0
         version: 10.5.0(jiti@2.7.0)
@@ -1359,9 +1362,6 @@ packages:
 
   '@unocss/preset-wind@66.7.4':
     resolution: {integrity: sha512-OZRsTfjY0iTEu01oqknKFxCxudv+3yXkXTVdllFBrFXws7OKXmm78Wmo+jwX3PhDBaEq71WuHi8s6u76YOiNLQ==}
-
-  '@unocss/reset@66.7.2':
-    resolution: {integrity: sha512-dKRbpBicfchatvqK2wqfX8gtNTCf+2pFdXBNDC0Cl2PZ8QCVMtCaHTOTSyruM0Pw7aqST4SlPkF5f8x7aZZL0w==}
 
   '@unocss/reset@66.7.4':
     resolution: {integrity: sha512-DYUxI/WVIFCMYKc8/jXCQvp26SmB5UvZ3fYEI1jLeb9BHZYtINvHfs1tIDTWSXOIP1s/yOPFeBDx9bm1PBF4zg==}
@@ -4814,8 +4814,6 @@ snapshots:
       '@unocss/core': 66.7.4
       '@unocss/preset-wind3': 66.7.4
 
-  '@unocss/reset@66.7.2': {}
-
   '@unocss/reset@66.7.4': {}
 
   '@unocss/rule-utils@66.7.4':
@@ -5122,7 +5120,7 @@ snapshots:
       '@astrojs/sitemap': 3.7.2
       '@pagefind/default-ui': 1.5.2
       '@unocss/astro': 66.7.4(vite@7.3.5(@types/node@24.13.2)(jiti@2.7.0)(yaml@2.9.0))
-      '@unocss/reset': 66.7.2
+      '@unocss/reset': 66.7.4
       astro: 6.1.8(@types/node@24.13.2)(@vercel/functions@3.7.2)(jiti@2.7.0)(rollup@4.62.2)(typescript@6.0.3)(yaml@2.9.0)
       hast-util-select: 6.0.4
       node-html-parser: 7.1.0
