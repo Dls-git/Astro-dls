@@ -3,6 +3,7 @@ import { Image } from 'astro:assets'
 
 import LocalQuote from '@/components/home/LocalQuote.astro'
 import EducationCard from '@/components/home/EducationCard.astro'
+import ColorSchemeSelector from '@/components/home/ColorSchemeSelector.astro'
 import { PostPreview } from 'astro-pure/components/pages'
 import { getBlogCollection, sortMDByDate } from 'astro-pure/server'
 import { Button, Card, Icon, Label } from 'astro-pure/user'
@@ -129,6 +130,10 @@ if (!images[imagePath])
         <SkillLayout title='Programming' skills={programming} />
         <SkillLayout title='Tools' skills={tools} />
         <SkillLayout title='Other' skills={other} />
+      </Section>
+
+      <Section title='Appearance'>
+        <ColorSchemeSelector />
       </Section>
     </div>
     <LocalQuote class='mt-12' />

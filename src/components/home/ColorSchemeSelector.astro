@@ -1,0 +1,52 @@
+---
+const schemes = [
+  { id: 'blue', name: 'Blue', color: '#4A8BA8' },
+  { id: 'green', name: 'Green', color: '#2D9966' },
+  { id: 'purple', name: 'Purple', color: '#7F4CBF' },
+  { id: 'rose', name: 'Rose', color: '#CC3366' },
+  { id: 'orange', name: 'Orange', color: '#E67326' }
+]
+---
+
+<div class='flex flex-wrap items-center gap-3'>
+  <span class='text-sm text-muted-foreground'>Color Scheme:</span>
+  {schemes.map((scheme) => (
+    <button
+      class='color-scheme-btn size-7 rounded-full border-2 border-transparent transition-all hover:scale-110'
+      data-scheme={scheme.id}
+      style={`background-color: ${scheme.color}`}
+      title={scheme.name}
+      aria-label={`Color scheme: ${scheme.name}`}
+    />
+  ))}
+</div>
+
+<script is:inline>
+  function updateActiveIndicator() {
+    var saved = localStorage.getItem('color-scheme') || 'blue'
+    document.querySelectorAll('.color-scheme-btn').forEach(function(btn) {
+      var isActive = btn.dataset.scheme === saved
+      btn.classList.toggle('ring-2', isActive)
+      btn.classList.toggle('ring-offset-2', isActive)
+      btn.style.borderColor = isActive ? 'hsl(var(--primary))' : 'transparent'
+    })
+  }
+
+  document.querySelectorAll('.color-scheme-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var scheme = this.dataset.scheme || 'blue'
+      localStorage.setItem('color-scheme', scheme)
+      // Use data attribute on html element
+      var root = document.documentElement
+      if (scheme === 'blue') {
+        root.removeAttribute('data-scheme')
+      } else {
+        root.setAttribute('data-scheme', scheme)
+      }
+      // Update button indicators
+      updateActiveIndicator()
+    })
+  })
+
+  updateActiveIndicator()
+</script>

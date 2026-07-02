@@ -32,6 +32,91 @@
   --input: 240 3.7% 17.9%;
   --ring: 240 4.9% 83.9%;
 }
+
+/* Color Schemes */
+:root[data-scheme='green'],
+html[data-scheme='green'] {
+  --primary: 150 60% 40%;
+  --foreground: 150 10% 10%;
+  --muted-foreground: 150 5% 35%;
+  --background: 150 20% 98%;
+  --muted: 150 15% 95%;
+  --card: 150 10% 90%;
+  --border: 150 10% 88%;
+}
+:root.dark[data-scheme='green'],
+html.dark[data-scheme='green'] {
+  --primary: 150 80% 70%;
+  --foreground: 150 10% 95%;
+  --muted-foreground: 150 10% 65%;
+  --background: 150 25% 6%;
+  --muted: 150 15% 12%;
+  --card: 150 10% 20%;
+  --border: 150 10% 22%;
+}
+
+:root[data-scheme='purple'],
+html[data-scheme='purple'] {
+  --primary: 270 50% 50%;
+  --foreground: 270 10% 10%;
+  --muted-foreground: 270 5% 35%;
+  --background: 270 20% 98%;
+  --muted: 270 15% 95%;
+  --card: 270 10% 90%;
+  --border: 270 10% 88%;
+}
+:root.dark[data-scheme='purple'],
+html.dark[data-scheme='purple'] {
+  --primary: 270 70% 75%;
+  --foreground: 270 10% 95%;
+  --muted-foreground: 270 10% 65%;
+  --background: 270 25% 6%;
+  --muted: 270 15% 12%;
+  --card: 270 10% 20%;
+  --border: 270 10% 22%;
+}
+
+:root[data-scheme='rose'],
+html[data-scheme='rose'] {
+  --primary: 340 60% 50%;
+  --foreground: 340 10% 10%;
+  --muted-foreground: 340 5% 35%;
+  --background: 340 20% 98%;
+  --muted: 340 15% 95%;
+  --card: 340 10% 90%;
+  --border: 340 10% 88%;
+}
+:root.dark[data-scheme='rose'],
+html.dark[data-scheme='rose'] {
+  --primary: 340 70% 75%;
+  --foreground: 340 10% 95%;
+  --muted-foreground: 340 10% 65%;
+  --background: 340 25% 6%;
+  --muted: 340 15% 12%;
+  --card: 340 10% 20%;
+  --border: 340 10% 22%;
+}
+
+:root[data-scheme='orange'],
+html[data-scheme='orange'] {
+  --primary: 25 80% 50%;
+  --foreground: 25 10% 10%;
+  --muted-foreground: 25 5% 35%;
+  --background: 25 20% 98%;
+  --muted: 25 15% 95%;
+  --card: 25 10% 90%;
+  --border: 25 10% 88%;
+}
+:root.dark[data-scheme='orange'],
+html.dark[data-scheme='orange'] {
+  --primary: 30 90% 70%;
+  --foreground: 25 10% 95%;
+  --muted-foreground: 25 10% 65%;
+  --background: 25 25% 6%;
+  --muted: 25 15% 12%;
+  --card: 25 10% 20%;
+  --border: 25 10% 22%;
+}
 :root {
   --un-default-border-color: hsl(var(--border) / 1);
 }
