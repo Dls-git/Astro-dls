@@ -1,4 +1,3 @@
-import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import vercel from '@astrojs/vercel'
 import AstroPureIntegration from 'astro-pure'
 import { defineConfig, fontProviders } from 'astro/config'
@@ -76,7 +75,6 @@ export default defineConfig({
     remarkPlugins: [remarkMath],
     rehypePlugins: [
       [rehypeKatex, {}],
-      rehypeHeadingIds,
       [
         rehypeAutolinkHeadings,
         {
@@ -93,8 +91,6 @@ export default defineConfig({
         dark: 'github-dark'
       },
       transformers: [
-        // Two copies of @shikijs/types (one under node_modules
-        // and another nested under @astrojs/markdown-remark → shiki).
         // Official transformers
         // @ts-ignore this happens due to multiple versions of shiki types
         transformerNotationDiff(),
