@@ -3,7 +3,7 @@ title: 'CS:APP Data Lab 逻辑代数与位运算化简指南'
 publishDate: 2026-07-01
 description: '从真值表到卡诺图再到受限位运算代码，系统解决 Data Lab 中的位级逻辑设计难题。'
 tags:
-  - CS:APP
+  - CSAPP
   - Data Lab
   - 位运算
   - 逻辑代数

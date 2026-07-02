@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "astro dev",
     "dev:check": "astro check --watch & astro dev",
-    "build": "astro build",
+    "build": "node scripts/patch-hast-util.cjs && astro build",
+    "postinstall": "node scripts/patch-hast-util.cjs",
     "preview": "astro preview",
     "sync": "astro sync",
     "check": "astro check",
@@ -32,7 +33,7 @@
     "typescript": "^6.0.3"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^7.0.0",
+    "@astrojs/mdx": "^4.0.0",
     "@astrojs/sitemap": "^3.7.3",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
     "@shikijs/core": "^4.3.0",
