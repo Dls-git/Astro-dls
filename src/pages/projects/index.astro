@@ -1,7 +1,7 @@
 ---
 import PageLayout from '@/layouts/CommonPage.astro'
 
-const headings = []
+const headings: { depth: number; slug: string; text: string }[] = []
 ---
 
 <PageLayout title='Projects' {headings}>
